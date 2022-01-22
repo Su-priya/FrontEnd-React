@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(pos){
+                document.getElementById("lat").innerText = pos.coords.latitude;
+                document.getElementById("lon").innerText = pos.coords.lonitude;
+                document.getElementById("acc").innerText = pos.coords.accuracy+ " in meters";
+                document.getElementById("ts").innerText = new Date(pos.timestamp);
+            })
+        }else{
+            console.log("Geolocation is not available");
+        }
+    }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>Longitude : <output id="lon"></output> </li>
+        <li>Latitude : <output id="lat"></output> </li>
+        <li>Accuracy : <output id="acc"></output> </li>
+        <li>Time Stamp : <output id="ts"></output> </li>
+    </ul>
+</body>
+</html>

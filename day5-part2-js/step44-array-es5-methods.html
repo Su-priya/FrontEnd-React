@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var nums = [23,45,77,57,65,10,12,28,98,9,34,52,1];
+        /*var doubleNums=[];
+        for(var i=0;i<nums.length;i++){
+            doubleNums.push(nums[i]*2);
+        };
+        console.log(nums.join('|'));
+        console.log(doubleNums.join('|'));
+        */
+    
+
+        // forEach
+        /*var doubleNums=[]; 
+       nums.forEach(function(val,idx,arr){
+            doubleNums.push(val*2);
+        });
+        console.log(nums.join('|'));
+        console.log(doubleNums.join('|')); 
+        */
+
+        // MAP
+        /*var doubleNums = nums.map(function(val,idx,arr){
+            return val * 2;
+        });
+        console.log(nums.join('|'));
+        console.log(doubleNums.join('|')); */
+
+        //FILTER
+
+        /*var greaterThan50 = nums.filter(function(val,idx,arr){
+            return val>50;
+        });
+        console.log(greaterThan50.join()); */
+
+        // EVERY - returns a boolean value.
+        /*var allGreaterThan50 = nums.every(function(val,idx,arr){
+            return val>50;
+        });
+
+        console.log(allGreaterThan50); */
+
+        // SOME
+        /*var someGreaterThan50 = nums.some(function(val,idx,arr){
+            return val>50;
+        });
+        console.log(someGreaterThan50);*/ 
+
+        // REDUCE /REDUCE RIGHT
+        /*var total = nums.reduceRight(function(initval,val,idx){
+            return initval+val;
+        },0);
+        console.log(total); */ 
+
+
+        // INDEX OF / LAST INDEX OF
+        console.log(nums.lastIndexOf(10));
+        // var s= "hello world";
+        // console.log(s.charAt(s.length-1));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+const redux = require("redux");
+const createStore = redux.createStore;
+ 
+// action
+const ADD_HERO = "ADD_HERO";
+const REMOVE_HERO = "REMOVE_HERO";
+ 
+// action creator
+function addhero(){
+    return {
+        type : ADD_HERO,
+        payload : "First Redux Action"
+    }
+}
+function removehero(){
+    return {
+        type : REMOVE_HERO,
+        payload : "Second Redux Action"
+    }
+}
+ 
+// intial state
+const initialState = {
+    numberOfHeroes : 0
+}
+ 
+// reducer
+const reducer = (state = initialState, action)=>{
+    switch(action.type){
+        case ADD_HERO : return {
+            numberOfHeroes : state.numberOfHeroes + 1
+        }
+        case REMOVE_HERO : return {
+            numberOfHeroes : state.numberOfHeroes - 1
+        }
+        default : return state
+    }
+}
+// store
+const store = createStore( reducer );
+console.log( "Before subscribe " ,store.getState() );
+const unsubscribe = store.subscribe( ()=> console.log("After Subscribe " ,store.getState() ) );
+ 
+store.dispatch( addhero() );
+console.log( "addhero() was called");
+store.dispatch( addhero() );
+console.log( "addhero() was called");
+store.dispatch( addhero() );
+console.log( "addhero() was called");
+store.dispatch( removehero() );
+console.log( "removehero() was called");
+store.dispatch( removehero() );
+console.log( "removehero() was called");
+ 
+unsubscribe();
+console.log( "unsubscribe was called");
+ 
+store.dispatch( addhero() );
+console.log( "addhero() was called" );
+store.dispatch( removehero() );
+console.log( "removehero() was called");

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        var boxX = 0;
+        var boxY = 0;
+        var odd = true;
+        var si = null;
+        window.onload = function(){
+            var ctx = document.getElementById("can").getContext("2d");
+            si = setInterval(function(){
+                if(odd){
+                    ctx.fillRect(boxX,boxY,50,50);
+                    boxX+=100;
+                }else{
+                    ctx.fillRect(boxX-50,boxY,50,50);
+                    boxX+=100;
+                };
+                if(boxX > 500){
+                    odd = !odd;
+                    boxY+=50;
+                    boxX = 0;
+                };
+                if(boxY > 500){
+                    clearInterval(si);
+                }
+            }, 20)
+        };
+    </script>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+</body>
+</html>

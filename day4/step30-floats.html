@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 2px solid black;
+            margin: auto;
+        }
+        article h1{
+            margin: 2px;
+        }
+        article[class ^= 'box']{
+            background-color: cadetblue;
+            width: 250px;
+            height: 250px;
+            padding: 10px;
+            margin: 10px;
+            text-align: justify;
+            outline: 1px solid red;
+        }
+        .box1, .box2{
+            float: left;
+        }
+        .box3, .box4{
+            float: right;
+        }
+        footer{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <article class="box1">
+        <h1>1</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box2">
+        <h1>2</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box3">
+        <h1>3</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box4">
+        <h1>4</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+
+    <footer>
+        <h2>&copy; Copyrights reserved by IBM India</h2>
+    </footer>
+</body>
+</html>

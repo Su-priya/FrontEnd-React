@@ -1,0 +1,26 @@
+
+// action
+const ADD_HERO = "ADD_HERO";
+
+// action creator
+function addhero(){
+    return {
+        type : ADD_HERO,
+        payload : "First Redux Action"
+    }
+}
+
+// initial state
+const initialState = {
+    numberOfHeroes : 0
+}
+
+// reducer
+const reducer = (state = initialState, action)=>{
+    switch(action.type){
+        case ADD_HERO : return {
+            numberOfHeroes : state.numberOfHeroes+1
+        }
+        default : return state
+    }
+}

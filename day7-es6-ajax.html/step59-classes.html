@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{
+            power = 0;
+            city = "default city";
+            constructor(ncity){
+                this.city = ncity;
+            }
+        }
+        class Hero extends Person{
+            firstname = "default";
+            lastname = "default";
+            age = 20;
+            _mission = "My Secret Mission";
+            constructor(fname, lname, cty){
+                super(cty);
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get mission(){
+                return this._mission
+            }
+            set mission(nmission){
+                this._mission = nmission;
+            }
+            static sayversion(){
+                return 1001;
+            }
+        };
+        var hero1 = new Hero("Peter", "Parker", "New York");
+        var hero2 = new Hero("Tony", "Stark", "New York");
+
+        console.log(hero1.firstname, hero1.lastname, hero1.fullname());
+        console.log(hero2.firstname, hero2.lastname, hero2.fullname());
+        // console.log(hero1.fullname === hero2.fullname);
+        console.log(hero1.mission);
+        hero1.mission = "Save the world";
+        console.log(hero1.mission);
+        console.log(hero1.age);
+        console.log(Hero.sayversion());
+        console.log(hero1.city);
+        console.log(hero1.power);
+    </script> 
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        https://jsonplaceholder.typicode.com/users
+    -->
+    <style>
+        button{
+            margin: auto;
+            width: 400px;
+            display: block;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .box{
+            margin: 10px auto;
+            width: 400px;
+            height: 300px;
+            background-color: silver;
+            overflow: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: rgb(32, 32, 32);
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: justify;
+        }
+        .user{
+            background-color: darkgray;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+        .user .uid{
+           display: block;
+           width: 60px;
+           height: 60px;
+           text-align: center;
+           line-height: 60px;
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: 24px;
+           color: darkslategray;
+           font-weight: bold;
+           float: left;
+           background-color: lightgray;
+        }
+        .user .uname{
+           float: left;
+           display: block;
+           height: 60px;
+           text-align: center;
+           line-height: 60px;
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: 24px;
+           color: darkslategray;
+           font-weight: bold;
+           margin-left: 20px;
+        }
+    </style>
+    <script src="lib/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click",function(){
+                $.ajax({
+                    url : "https://jsonplaceholder.typicode.com/users",
+                    dataType : "JSON",
+                    success : function(res, statusText, jqxhr){
+                       res.map(function(data){
+                        $(".box").append(
+                            `<div class="user">
+                                <span class="uid">${data.id}</span>
+                                <span class="uname">${data.name}</span>
+                             </div>`)
+                       })
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>Get Data</button>
+    <div class="box"></div>
+</body>
+</html>
+<!-- 
+document.addEventListener("DOMContentLoaded", init);
+        var xhr = new XMLHttpRequest();
+        function init(){
+            document
+            .querySelector("button")
+            .addEventListener("click", clickHandler);
+            xhr.addEventListener("readystatechange", changeHandler);
+            xhr.open("get","https://jsonplaceholder.typicode.com/users",false);
+        };
+        function clickHandler(){
+            xhr.send();
+        };
+        function changeHandler(evt){
+            console.log("XHR Ready State is : ",evt.target.readyState);
+            console.log("XHR Status : ",evt.target.status, "XHR StatusText : ",evt.target.statusText);
+            // console.log(evt.target.responseText);
+            if(evt.target.readyState === 4 && evt.target.status === 200){
+                // document.getElementsByClassName("box")[0].innerText = evt.target.responseText;
+                let users = JSON.parse(evt.target.responseText);
+                    users.forEach(function(val, idx, arr){
+                        document.getElementsByClassName("box")[0].innerHTML += `<div class="user">
+                                                                                    <span class="uid">${val.id}</span>
+                                                                                    <span class="uname">${val.name}</span>
+                                                                                </div>`
+                    });
+            }
+        }; -->

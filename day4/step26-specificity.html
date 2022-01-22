@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+        p{
+            background-color: darkkhaki !important;
+            color: white;
+            padding: 10px;
+        }
+        html body p+div[class][id][class='box'][id='ibm'].box#ibm p[class].boxer.borderbox{
+            background-color: steelblue;
+            padding: 10px;
+            color: white;
+        }   
+        html body p+div[class][id][class='box'].box#ibm p[class].boxer.borderbox{
+            background-color: springgreen;
+            padding: 10px;
+            color: white;
+        }   
+        html body p+div[class][id].box#ibm p[class].boxer.borderbox{
+            background-color: slategrey;
+            padding: 10px;
+            color: white;
+        }   
+        html body p+div[class].box#ibm p[class].boxer.borderbox{
+            background-color: palevioletred;
+            padding: 10px;
+            color: white;
+        }   
+        html body p+div.box#ibm p[class].boxer.borderbox{
+            background-color: navy;
+            padding: 10px;
+            color: white;
+        }   
+        html body p+div.box#ibm p.boxer.borderbox{
+            background-color: yellowgreen;
+            padding: 10px;
+            color: white;
+        }   
+        html body div.box#ibm p.boxer.borderbox{
+            background-color: sienna;
+            padding: 10px;
+            color: white;
+        }   
+        body div.box#ibm p.boxer.borderbox{
+            background-color: seagreen;
+            padding: 10px;
+            color: white;
+        }   
+        div.box#ibm p.boxer.borderbox{
+            background-color: purple;
+            padding: 10px;
+            color: white;
+        }   
+        .box#ibm p.boxer.borderbox{
+            background-color: orchid;
+            padding: 10px;
+            color: white;
+        }
+        #ibm p.boxer.borderbox{
+            background-color: orangered;
+            padding: 10px;
+            color: white;
+        }
+        div p.boxer.borderbox{
+            background-color: cornflowerblue;
+            padding: 10px;
+            color: white;
+        }
+        div p.boxer{
+            background-color: chocolate;
+            padding: 10px;
+            color: white;
+        }
+        p.boxer{
+            background-color: blueviolet;
+            padding: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vitae expedita repellat, asperiores nisi iure perferendis, facilis recusandae veniam aliquam consequatur numquam explicabo voluptatum aliquid, fugiat quos mollitia sunt tenetur!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vitae expedita repellat, asperiores nisi iure perferendis, facilis recusandae veniam aliquam consequatur numquam explicabo voluptatum aliquid, fugiat quos mollitia sunt tenetur!
+    </p>
+   <div class="box" id="ibm">
+       <p class="boxer borderbox">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vitae expedita repellat, asperiores nisi iure perferendis, facilis recusandae veniam aliquam consequatur numquam explicabo voluptatum aliquid, fugiat quos mollitia sunt tenetur!
+        </p>
+   </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur vitae expedita repellat, asperiores nisi iure perferendis, facilis recusandae veniam aliquam consequatur numquam explicabo voluptatum aliquid, fugiat quos mollitia sunt tenetur!
+    </p>
+</body>
+</html>

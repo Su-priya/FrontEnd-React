@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width: 100px;
+            display: inline-block;
+            text-align: right;
+        }
+        input{
+            padding: 5px;
+            margin: 5px;
+        }
+        button{
+            margin-left: 110px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var uage = document.getElementById("uage");
+            uage.setCustomValidity("We need your age info");
+            uage.addEventListener("input", function(){
+                if(uage.value < 18){
+                    uage.setCustomValidity("You are too young to join us")
+                }else if(uage.value > 80){
+                    uage.setCustomValidity("You are too old to join us")
+                }else{
+                    uage.setCustomValidity("");
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+   <form action="#">
+    <div>
+        <label for="uname">User Name : </label>
+        <input required name="username" id="uname" type="text"/>
+   </div>
+   <div>
+       <label for="uage">User Age : </label>
+       <input required name="userage" min="18" max="80" id="uage" type="number"/>
+   </div>
+   <div>
+       <label for="uemail">User eMail : </label>
+       <input required pattern="\S+@\S+.\S+" name="usermail" id="uemail" type="email"/>
+   </div>
+   <div>
+        <label for="uphone">User Phone : </label>
+        <input 
+        title="Expected Format is ###-########" 
+        required 
+        pattern="\d{3}-\d{8}"
+        name="userphone" 
+        id="uphone" 
+        placeholder="###-########"
+        type="tel"/>
+   </div>
+   <button type="submit">Register</button>
+   </form>
+</body>
+</html>

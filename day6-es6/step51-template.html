@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var herolist = [
+            {
+                title : "Ironman",
+                firstname : "Tony",
+                lastname : "Stark",
+                power : 6,
+                photo : "images/ironman.jpg",
+                city : "New York"
+            },
+            {
+                title : "Hulk",
+                firstname : "Bruce",
+                lastname : "Benner",
+                power : 8,
+                photo : "images/hulk.jpg",
+                city : "New York"
+            },
+            {
+                title : "Batman",
+                firstname : "Bruce",
+                lastname : "Wayne",
+                power : 7,
+                photo : "images/batman.jpg",
+                city : "Gotham"
+            },
+            {
+                title : "Superman",
+                firstname : "Clark",
+                lastname : "Kent",
+                power : 10,
+                photo : "images/superman.jpg",
+                city : "Metropolis"
+            },
+            {
+                title : "Spiderman",
+                firstname : "Peter",
+                lastname : "Parker",
+                power : 5,
+                photo : "images/spiderman.jpg",
+                city : "New York"
+            }
+        ]
+
+        window.onload = function(){
+            for(let i = 0; i < herolist.length; i++){
+               // document.getElementsByClassName("container")[0].innerHTML += '<div class="box"> <h1>'+herolist[i].title+'</h1> <img src="'+herolist[i].photo+'" alt="'+herolist[i].title+'"> <h2>'+herolist[i].firstname+' '+herolist[i].lastname+'</h2> <h2>'+herolist[i].city+'</h2> <input type="range" min="0" max="10" value="'+herolist[i].power+'"> </div>'
+               document.getElementsByClassName("container")[0].innerHTML += `
+               <div class="box">
+                    <h1> ${herolist[i].title}</h1>
+                    <img src="${herolist[i].photo}" alt="${herolist[i].title}">
+                    <h2> ${herolist[i].firstname +' '+ herolist[i].lastname}</h2>
+                    <h2> ${herolist[i].city}</h2>
+                    <input type="range" min="0" max="10" value="${herolist[i].power}">
+               </div>
+               ` 
+            }
+        }
+    </script>
+    <style>
+        .box{
+            width: 250px;
+            background-color: cadetblue;
+            border: 5px solid darkslategray;
+            float: left;
+            margin: 10px;
+        }
+
+        .box h1, h2{
+            margin: 0px;
+            padding: 10px;
+            background-color: dimgray;
+            color: ghostwhite;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box h2:nth-child(4){
+            background-color: rgb(173, 173, 173);
+        }
+        .box input[type='range'], img{
+            display: block;
+            width: 100%;
+        }
+        .box input[type='range']{
+            margin: 10px;
+            width: 230px;
+        }
+        .container{
+            border: 1px solid transparent;
+            background-color: thistle;
+            padding: 10px;
+        }
+        .container:after{
+           content: '';
+           display: block;
+           clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

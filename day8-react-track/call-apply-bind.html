@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Example to illustrate the difference between
+            call,apply and bind function prototypes */
+
+        let name={
+            firstname:"Supriya",
+            lastname: "Narravula"
+        }
+        let printFullName = function(city,state){
+         console.log(this.firstname+" "+this.lastname+" from "+city+","+state);
+        }
+
+    // CALL - Function borrowing
+    printFullName.call(name,"Tirupati","AndhraPradesh");
+
+    // APPLY - Arguments must be passed as an array
+    let name1={
+        firstname:"Poojitha",
+        lastname:"Manchu"
+    }
+    printFullName.apply(name1,["Tirupati","AndhraPradesh"]);
+
+    // BIND - Gives us the copy which we will invoke later.
+    // It gives the method that we have to call.
+
+    var mySelf=printFullName.bind(name,"Tirupati","AP" );
+    console.log(mySelf);
+    mySelf();
+
+    //Another example to understand bind
+    let name2 = {
+    name: 'Supriya Narravula',
+    getname: function(speed) {
+        console.log(this.name + ' working in IBM ' + location + ' .');
+        }
+    };
+
+    let role = {
+    name: 'FrontEnd Developer',
+    getrole: function(location) {
+        console.log(this.name + ' works at ' + location + ' .');
+        }
+    };
+
+    let getname = name2.getname.bind(name2, "Bangalore");
+    getname();
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

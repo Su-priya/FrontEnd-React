@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeHandler(source, target){
+            document.getElementById(target).value = source.value;
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>  Sl # </th>
+                <th>  Input Type </th>
+                <th>  As Displayed in the Browser </th>
+                <th>  Value Entered </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 1 </td>
+                <td> Text </td>
+                <td> <input type="text" oninput="changeHandler(this, 'textop')" > </td>
+                <td> <output id="textop"></output> </td>
+            </tr>
+            <tr>
+                <td> 2 </td>
+                <td> Search </td>
+                <td> <input type="search" oninput="changeHandler(this, 'searchop')" > </td>
+                <td> <output id="searchop"></output> </td>
+            </tr>
+            <tr>
+                <td> 3 </td>
+                <td> Color </td>
+                <td> <input type="color" oninput="changeHandler(this, 'colorop')"> </td>
+                <td> <output id="colorop"></output> </td>
+            </tr>
+            <tr>
+                <td> 4 </td>
+                <td> Range </td>
+                <td> <input type="range" oninput="changeHandler(this, 'rangeop')"> </td>
+                <td> <output id="rangeop"></output> </td>
+            </tr>
+            <tr>
+                <td> 5 </td>
+                <td> Time </td>
+                <td> <input type="time" oninput="changeHandler(this, 'timeop')"> </td>
+                <td> <output id="timeop"></output> </td>
+            </tr>
+            <tr>
+                <td> 6 </td>
+                <td> Date </td>
+                <td> <input type="date" oninput="changeHandler(this, 'dateop')"> </td>
+                <td> <output id="dateop"></output> </td>
+            </tr>
+            <tr>
+                <td> 7 </td>
+                <td> Week </td>
+                <td> <input type="week" oninput="changeHandler(this, 'weekop')"> </td>
+                <td> <output id="weekop"></output> </td>
+            </tr>
+            <tr>
+                <td> 8 </td>
+                <td> Month </td>
+                <td> <input type="month" oninput="changeHandler(this, 'monthop')"> </td>
+                <td> <output id="monthop"></output> </td>
+            </tr>
+            <tr>
+                <td> 9 </td>
+                <td> Number </td>
+                <td> <input type="number" oninput="changeHandler(this, 'numberop')"> </td>
+                <td> <output id="numberop"></output> </td>
+            </tr>
+            <tr>
+                <td> 10 </td>
+                <td> Date Time Local </td>
+                <td> <input type="datetime-local" oninput="changeHandler(this, 'localop')"> </td>
+                <td> <output id="localop"></output> </td>
+            </tr>
+            <tr>
+                <td> 11 </td>
+                <td> Date Time Deprecated </td>
+                <td> <input type="datetime" oninput="changeHandler(this, 'datetimeop')"> </td>
+                <td> <output id="datetimeop"></output> </td>
+            </tr>
+            <tr>
+                <td> 12 </td>
+                <td> Telephone </td>
+                <td> <input type="tel" oninput="changeHandler(this, 'telop')"> </td>
+                <td> <output id="telop"></output> </td>
+            </tr>
+            <tr>
+                <td> 13 </td>
+                <td> URL </td>
+                <td> <input type="url" oninput="changeHandler(this, 'urlop')"> </td>
+                <td> <output id="urlop"></output> </td>
+            </tr>
+            <tr>
+                <td> 14 </td>
+                <td> eMail </td>
+                <td> <input type="email" oninput="changeHandler(this, 'emailop')"> </td>
+                <td> <output id="emailop"></output> </td>
+            </tr>
+            <tr>
+                <td colspan="4"> Outputs </td>
+            </tr>
+            <tr>
+                <td> 1 </td>
+                <td> Progress  </td>
+                <td> <input min="0" step="0.01" max="1" type="range" oninput="changeHandler(this, 'progop')"> </td>
+                <td> <progress id="progop" value="0.5"></progress> </td>
+            </tr>
+            <tr>
+                <td> 2 </td>
+                <td> Meter  </td>
+                <td> <input  min="0" step="0.10" max="1"  type="range" oninput="changeHandler(this, 'meter01')"> </td>
+                <td> <meter id="meter01" low="0.3" high="0.7" value="0.8"></meter> </td>
+            </tr>
+            <tr>
+                <td> 3 </td>
+                <td> Meter  </td>
+                <td> <meter optimum="0.2" low="0.3" high="0.7" value="0.8"></meter> </td>
+                <td> <meter optimum="0.9" low="0.3" high="0.7" value="0.2"></meter> </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

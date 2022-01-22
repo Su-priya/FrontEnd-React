@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var si = null;
+        window.onload = function(){
+            document.getElementById("playBtn").onclick=playVid;
+            document.getElementById("pauseBtn").onclick=pauseVid;
+            document.getElementById("stopBtn").onclick=stopVid;
+        }
+        function playVid(){
+            document.getElementById("vid").play();
+            si = setInterval(function(){
+                document.getElementById("log").innerText = document.getElementById("vid").currentTime;},10);
+        }
+        function pauseVid(){
+            document.getElementById("vid").pause();
+            document.getElementById("log").innerText = document.getElementById("vid").currentTime;
+        }
+        function stopVid(){
+            document.getElementById("vid").pause();
+            document.getElementById("vid").currentTime=0;
+            clearInterval(si);
+        }
+    </script>
+</head>
+<body>
+    <h1>Play Video / Audio</h1>
+    <video id="vid" width="550" height="400" poster="images/rajani.jpg">
+        <source src="media/html5.webm">
+        <source src="media/html5.mp4">
+    </video>
+    <br>
+    <button id="playBtn">Play</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="stopBtn">Stop</button>
+    <h2>Current Time: <span id="log"></span></h2>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var si = null;
+        var audi = null;
+        var log = null;
+        window.onload = function(){
+            document.getElementById("playBtn").onclick = playAudio;
+            document.getElementById("pauseBtn").onclick = pauseAudio;
+            document.getElementById("stopBtn").onclick = stopVid;
+            audi =  document.getElementById("audi");
+            log = document.getElementById("log");
+        }
+        function playAudio(){  
+            audi.play(); 
+            si = setInterval(function(){
+                log.innerText =audi.currentTime;
+            },10);
+        }
+        function pauseAudio(){ 
+            audi.pause(); 
+            log.innerText = audi.currentTime;
+        }
+        function stopVid(){ 
+            audi.pause(); 
+            audi.currentTime = 0;
+            log.innerText = audi.currentTime;
+            clearInterval(si);
+        }
+    </script>
+</head>
+<body>
+    <h1>Play Video / Audio</h1>
+    <audio id="audi">
+        <source src="media/sunny.mp3">
+    </audio>
+    <br>
+    <button id="playBtn">Play</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="stopBtn">Stop</button>
+    <h2>Current Time : <span id="log"></span></h2>
+</body>
+</html>

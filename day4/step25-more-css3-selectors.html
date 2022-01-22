@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       :checked {
+            margin-left: 25px;
+            box-shadow: 10px 10px 10px black;
+        }
+        p:empty{
+            border: 2px solid red;
+        }
+        p:not(:empty){
+            border: 2px solid blue;
+        }
+       body>li{
+            background-color: crimson;
+        }
+        p{
+            font-family: Trebuchet MS;
+        }
+    </style>
+</head>
+<body>
+    <input name="agree" checked type="radio" id="dev">
+    <label for="dev">Agree</label>
+    <br>
+    <input name="agree" checked type="radio" id="dev">
+    <label for="dev">Dont Agree</label>
+    <br>
+    <input type="checkbox" id="desi">
+    <label for="desi">Designer</label>
+    <hr/>
+    <p></p>
+    <hr/>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, cupiditate? Quisquam maxime non laudantium, nemo accusantium sint laboriosam aperiam quo voluptas, odio rerum nostrum repellat molestias dolorum modi ipsa dicta!
+    </p>
+    <hr/>
+    <li>List Item</li>
+    <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+</body>
+</html>

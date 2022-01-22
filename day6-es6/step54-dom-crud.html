@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count = 0;
+        window.onload = function(){
+           document.getElementsByTagName("button")[0].onclick = addBoxHandler;
+           document.getElementsByTagName("button")[1].onclick = removeBoxHandler;
+           document.getElementsByTagName("button")[2].onclick = removeLastBoxHandler;
+        };
+        function addBoxHandler(){
+            let box = document.createElement("div");
+                box.innerHTML = 'box '+count;
+                // box.onclick = clickboxhandler;
+                box.addEventListener("click",clickboxhandler);
+                document.getElementsByClassName("container")[0].appendChild(box);
+                count++;
+        }
+        function removeBoxHandler(){
+            let box = document.getElementsByClassName("container")[0].firstChild;
+            if(box){
+                document.getElementsByClassName("container")[0].removeChild(box);
+                count--;
+            }
+        }
+        function removeLastBoxHandler(){
+            let box = document.getElementsByClassName("container")[0].lastChild;
+            if(box){
+                document.getElementsByClassName("container")[0].removeChild(box);
+                count--;
+            }
+        }
+        function clickboxhandler(evt){
+            let box = evt.target;
+            if(box){
+                document.getElementsByClassName("container")[0].removeChild(box);
+                count--;
+            }
+        }
+    </script>
+    <style>
+        .container{
+            background-color: darkslategray;
+            padding: 10px;
+            border: 1px solid transparent;
+        }
+        .container:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .container div{
+            background-color: tomato;
+            margin: 10px;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+    <hr>
+    <div class="container"></div>
+</body>
+</html>

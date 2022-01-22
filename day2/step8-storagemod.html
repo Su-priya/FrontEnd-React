@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count = localStorage.length;
+        var dropdown = null;
+        function loadUsers(){
+            dropdown.innerHTML = "<option>Select here</option>";
+            for(var i = 0; i < localStorage.length; i++){
+                var key = localStorage.key(i);
+                var user = JSON.parse(localStorage.getItem(key));
+                dropdown.innerHTML+="<option value='"+key+"'>"+user.username+"</option>";
+            }
+        }
+        onload = function(){
+            dropdown = document.getElementById("dropdown");
+            loadUsers();
+            document.getElementById("addbtn").onclick = clickHandler;
+            document.getElementById("getbtn").onclick = getHandler;
+            document.getElementById("getlength").onclick = getLengthHandler;
+            document.getElementById("removeBtn").onclick = removeHandler;
+            document.getElementById("clearBtn").onclick = clearHandler;
+        }
+        function clickHandler(){
+            var uname = document.getElementById("uname").value;
+            var uage = document.getElementById("uage").value;
+            if(uname && uage){
+ 
+            var user = {
+                username : document.getElementById("uname").value,
+                userage : document.getElementById("uage").value
+            };
+            // localStorage.user = JSON.stringify(user);
+            localStorage.setItem("user"+count,JSON.stringify(user))
+            document.getElementById("uname").value = '';
+            document.getElementById("uage").value = '';
+            // alert("user info is now stored");
+            loadUsers();
+            count = localStorage.length;                   
+        }else{
+            alert("please enter your details")
+        }
+            
+        }
+        function getHandler(){
+            // var tempuser = JSON.parse(localStorage.user);
+            /* var tempuser = JSON.parse(localStorage.getItem("user"+3));
+            alert("User Name : "+tempuser.username+"\n"+"User Age : "+tempuser.userage); */
+           // console.log(dropdown.value);
+            var tempuser = JSON.parse(localStorage.getItem(dropdown.value));
+            alert("User Name : "+tempuser.username+"\n"+"User Age : "+tempuser.userage);
+        }
+        function getLengthHandler(){
+            alert("We have a total of : "+localStorage.length+" Users");
+        }
+        function removeHandler(){
+            localStorage.removeItem(dropdown.value);
+            loadUsers();
+            alert("selecte user removed");
+            /* console.log(dropdown.value); */
+        }
+        function clearHandler(){
+            localStorage.clear();
+            loadUsers();
+            alert("all users removed");
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>User Name</td>
+                <td> <input type="text" id="uname"/> </td>
+            </tr>
+            <tr>
+                <td>User Age</td>
+                <td> <input type="text" id="uage"/> </td>
+            </tr>
+            <tr>
+                <td> &nbsp; </td>
+                <td> <button id="addbtn">Add User</button> </td>
+            </tr>
+        </tbody>
+    </table>
+    <select id="dropdown">
+        <option>Select here</option>
+    </select>
+    <button id="getbtn">Get User Info</button> 
+    <button id="getlength">Total Users</button> 
+    <button id="removeBtn">Remove Selected User</button> 
+    <button id="clearBtn">Clear All</button> 
+</body>
+</html>

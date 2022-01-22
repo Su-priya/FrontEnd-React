@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var hero = {
+            title : "Batman",
+            power : 6,
+            city : "Gotham"
+        };
+        /*
+        console.log(hero.title); //Batman
+        var sidekick = hero;
+        console.log(sidekick.title); //Batman
+        sidekick.title = "Robin";
+        console.log(sidekick.title); //Robin
+        console.log(hero.title); //Robin
+        */ 
+       /*
+        var herotitle = hero.title,
+       heropower = hero.power,
+       herocity = hero.city;
+
+       console.log(herotitle); //Batman
+       herotitle = "Robin";
+       console.log(herotitle); //Robin
+       console.log(hero.title); //Batman
+       */ 
+      /*
+       var {
+          title : herotitle,
+          power : heropower,
+          city : herocity} = hero;
+      console.log(herotitle); //Batman
+      herotitle = "Robin";
+      console.log(herotitle); //Robin
+      console.log(hero.title); //Batman
+      */ 
+     /*    var heroes = ["Batman","Aquaman","Cyborg"];
+      var [hero1,hero2,hero3] = heroes;
+      console.log(hero1);  */ 
+
+      var {title, power, city} = hero;
+       console.log(title);// Batman
+       title = "Robin";
+       console.log(title);// Robin
+       console.log(hero.title);// Batman
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

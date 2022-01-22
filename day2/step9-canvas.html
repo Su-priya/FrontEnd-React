@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var ctx = document.getElementById("can").getContext("2d");
+            ctx.font="bold 40px Arial";
+            // ctx.rotate((Math.PI / 180) * 45);
+            // ctx.scale(0.5,2);
+            // ctx.translate(50,50);
+            //ctx.fillText("Hello IBM India",0,50);
+            // transformations
+            // rotate
+            // scale
+            // translate
+            var ant = new Image();
+                ant.src = "images/antman.jpg";
+                ant.onload = function(){
+                    ctx.drawImage(ant,0,0);
+                }
+        };
+    </script>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+</body>
+</html>

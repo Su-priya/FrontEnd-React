@@ -1,0 +1,5 @@
+TestAdmin
+TestPassword
+
+
+mongodb+srv://TestAdmin:TestPassword@cluster0.n8vwl.mongodb.net/IBMCRUD?retryWrites=true&w=majority

@@ -1,0 +1,29 @@
+Extensions for Angular
+Angular 2 TypeScript Emmet By jakethashi
+Extensions for React
+Simple React Snippets By Burke Holland
+Extensions for All
+Live Server By Ritwik Dey
+Material Icon Theme By Philipp Kief
+Mithril Emmet By FallenMax
+npm By egamma
+open in browser By TechER
+Prettier - Code formatter By Prettier
+
+
+Graphics url: https://magnum.graphics/showcase/
+
+Canvasmol:  https://alteredqualia.com/canvasmol/
+
+http://p.ip.fi/NDrq  step23-attribute-selector
+
+http://p.ip.fi/0__f
+
+
+
+NVM::
+https://github.com/coreybutler/nvm-windows/releases
+
+
+Typescript configuration
+https://www.typescriptlang.org/tsconfig

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+        onload = function(){
+            document.getElementById("addbtn").onclick = clickHandler;
+            document.getElementById("getbtn").onclick = getHandler;
+        }
+        function clickHandler(){
+            var user = {
+                username : document.getElementById("uname").value,
+                userage : document.getElementById("uage").value
+            };
+            //alert(JSON.stringify(user));
+            localStorage.user = JSON.stringify(user);
+            document.getElementById("uname").value='';
+            document.getElementById("uage").value='';
+            alert("user info is now stored")
+
+        }
+        function getHandler(){
+            var tempuser=JSON.parse(localStorage.user);
+            alert("User Name : "+tempuser.username+"\n"+"User Age : "+tempuser.userage);
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input type="text" id="uname"/>
+                </td>
+            </tr>
+            <tr>
+                <td>User Age</td>
+                <td>
+                    <input type="text" id="uage"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   &nbsp;
+                </td>
+                <td>
+                    <button id="addbtn">Add User</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="getbtn">Get User Info</button>
+</body>
+</html>

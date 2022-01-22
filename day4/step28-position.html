@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 2px solid black;
+            height: 1500px;
+            width: 1160px;
+            margin: auto;
+            position: relative;
+        }
+        article h1{
+            margin: 2px;
+        }
+        .box{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        article[class ^= 'box']{
+            background-color: cadetblue;
+            width: 250px;
+            height: 250px;
+            padding: 10px;
+            margin: 10px;
+            text-align: justify;
+            outline: 1px solid red;
+            position: absolute;
+        }
+        .box1{
+            top: 0px;
+            left: 0px;
+        }
+        .box3{
+            top: 0px;
+            left: 290px;
+        }
+        .box4{
+            top: 0px;
+            left: 580px;
+        }
+        .box5{
+            top: 0px;
+            left: 870px;
+        }
+    </style>
+</head>
+<body>
+    <article class="box1">
+        <h1>1</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box">
+        <h1>2</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box3">
+        <h1>3</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box4">
+        <h1>4</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+    <article class="box5">
+        <h1>5</h1>
+        <hr>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est exercitationem sed esse rerum accusantium hic, nisi tenetur perferendis temporibus nostrum delectus vitae, itaque distinctio accusamus nam fugit similique, voluptatum praesentium.
+    </article>
+</body>
+</html>
